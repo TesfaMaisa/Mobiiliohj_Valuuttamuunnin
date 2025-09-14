@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, ActivityIndicator, FlatList } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, ActivityIndicator, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 
@@ -14,7 +14,7 @@ export default function App() {
   const [key, setKeys] = useState([])
 
   var myHeaders = new Headers();
-  myHeaders.append("apikey", "qK83eHjQYdk0c8UZ13l55l8tFVxAMEmb");
+  myHeaders.append("apikey", "3l1V7pwQ1euxh6GQonVpmxZ59XBEMyee");
 
   var requestOptions = {
     method: 'GET',
@@ -65,7 +65,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: 'bold' }}>{result}</Text>
+     <Image source={require('./assets/euro.jpg')} style={{height:200, width:200}} />
+      <Text style={{ fontWeight: 'bold', fontSize:40}}>{result}</Text>
       <View style={{ flexDirection: 'row' }}>
         <TextInput placeholder='Määrä' value={amount} onChangeText={text => setAmount(Number(text))}></TextInput>
         <Picker style={{ height: 200, width: 200 }} selectedValue={from} onValueChange={(itemValue, itemIndex) => setFrom(itemValue)}>
